@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import AnimatedBackground from "@/components/AnimatedBackground";
+import LightRays from "@/components/LightRays";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -39,7 +39,16 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen">
-      <AnimatedBackground />
+      <LightRays 
+        raysOrigin="top-center"
+        raysColor="#8b5cf6"
+        raysSpeed={1}
+        lightSpread={0.5}
+        rayLength={3}
+        pulsating
+        followMouse
+        mouseInfluence={0.1}
+      />
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       
       <main className="relative z-10">
