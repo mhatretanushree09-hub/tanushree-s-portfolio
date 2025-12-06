@@ -41,7 +41,7 @@ const Index = () => {
     <div className="relative min-h-screen">
       <LightRays 
         raysOrigin="top-center"
-        raysColor="#8b5cf6"
+        raysColor="#ffffff"
         raysSpeed={1}
         lightSpread={0.5}
         rayLength={3}
