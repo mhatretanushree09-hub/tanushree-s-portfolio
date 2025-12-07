@@ -1,5 +1,6 @@
-import { Award, ExternalLink } from "lucide-react";
+import { Award, Download } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const achievements = [
   {
@@ -7,24 +8,28 @@ const achievements = [
     issuer: "MathWorks Training Services",
     date: "November 2025",
     description: "Completed foundational self-paced course on MATLAB basics including commands, arrays, and scripts.",
+    certificateUrl: "/certificates/matlab-onramp.pdf",
   },
   {
     title: "Deep Learning Onramp",
     issuer: "MathWorks Training Services",
     date: "November 2025",
     description: "Mastered deep learning fundamentals using MATLAB including neural networks and AI concepts.",
+    certificateUrl: "/certificates/deep-learning-onramp.pdf",
   },
   {
     title: "Signal Processing Onramp",
     issuer: "MathWorks Training Services",
     date: "November 2025",
     description: "Learned signal processing techniques for analyzing, filtering, and transforming signals.",
+    certificateUrl: "/certificates/signal-processing-onramp.pdf",
   },
   {
     title: "Machine Learning Onramp",
     issuer: "MathWorks Training Services",
     date: "November 2025",
     description: "Completed self-paced course on machine learning workflows including training and evaluation.",
+    certificateUrl: "/certificates/machine-learning-onramp.pdf",
   },
 ];
 
@@ -51,19 +56,27 @@ const AchievementsSection = () => {
                   <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
                     <Award className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="flex-1 space-y-2">
-                    <div className="flex items-start justify-between gap-2">
+                  <div className="flex-1 space-y-3">
+                    <div>
                       <h3 className="font-semibold text-lg">{achievement.title}</h3>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" />
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span className="text-primary font-medium">{achievement.issuer}</span>
-                      <span>•</span>
-                      <span>{achievement.date}</span>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
+                        <span className="text-primary font-medium">{achievement.issuer}</span>
+                        <span>•</span>
+                        <span>{achievement.date}</span>
+                      </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {achievement.description}
                     </p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all"
+                      onClick={() => window.open(achievement.certificateUrl, "_blank")}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      View Certificate
+                    </Button>
                   </div>
                 </div>
               </CardContent>
