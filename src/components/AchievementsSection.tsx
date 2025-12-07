@@ -4,27 +4,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const achievements = [
   {
     title: "MATLAB Onramp",
-    issuer: "MathWorks",
-    date: "2024",
-    description: "Completed foundational course on MATLAB basics including commands, arrays, and scripts.",
+    issuer: "MathWorks Training Services",
+    date: "November 2025",
+    description: "Completed foundational self-paced course on MATLAB basics including commands, arrays, and scripts.",
   },
   {
-    title: "MATLAB Fundamentals",
-    issuer: "MathWorks",
-    date: "2024",
-    description: "Mastered core MATLAB programming concepts, data analysis, and visualization techniques.",
+    title: "Deep Learning Onramp",
+    issuer: "MathWorks Training Services",
+    date: "November 2025",
+    description: "Mastered deep learning fundamentals using MATLAB including neural networks and AI concepts.",
   },
   {
-    title: "Simulink Onramp",
-    issuer: "MathWorks",
-    date: "2024",
-    description: "Learned to build and simulate dynamic systems using Simulink block diagrams.",
+    title: "Signal Processing Onramp",
+    issuer: "MathWorks Training Services",
+    date: "November 2025",
+    description: "Learned signal processing techniques for analyzing, filtering, and transforming signals.",
   },
   {
-    title: "MATLAB Programming Techniques",
-    issuer: "MathWorks",
-    date: "2024",
-    description: "Advanced certification covering functions, debugging, and performance optimization in MATLAB.",
+    title: "Machine Learning Onramp",
+    issuer: "MathWorks Training Services",
+    date: "November 2025",
+    description: "Completed self-paced course on machine learning workflows including training and evaluation.",
   },
 ];
 
@@ -33,11 +33,11 @@ const AchievementsSection = () => {
     <section id="achievements" className="py-20 md:py-32 bg-muted/30 relative">
       <div className="container mx-auto px-4">
         <h2 className="section-title">
-          My <span className="text-gradient">Achievements</span>
+          My <span className="text-gradient">Certifications</span>
         </h2>
 
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-          Certifications and accomplishments that showcase my dedication to continuous learning and skill development.
+          MathWorks certifications showcasing my expertise in MATLAB, machine learning, and signal processing.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
