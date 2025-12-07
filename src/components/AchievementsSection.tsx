@@ -3,28 +3,28 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const achievements = [
   {
-    title: "Web Development Fundamentals",
-    issuer: "Coursera",
+    title: "MATLAB Onramp",
+    issuer: "MathWorks",
     date: "2024",
-    description: "Completed comprehensive course on HTML, CSS, and JavaScript fundamentals.",
+    description: "Completed foundational course on MATLAB basics including commands, arrays, and scripts.",
   },
   {
-    title: "Python Programming",
-    issuer: "NPTEL",
+    title: "MATLAB Fundamentals",
+    issuer: "MathWorks",
     date: "2024",
-    description: "Certification in Python programming covering basics to advanced concepts.",
+    description: "Mastered core MATLAB programming concepts, data analysis, and visualization techniques.",
   },
   {
-    title: "Data Structures & Algorithms",
-    issuer: "HackerRank",
-    date: "2023",
-    description: "Achieved proficiency in problem solving and algorithmic thinking.",
+    title: "Simulink Onramp",
+    issuer: "MathWorks",
+    date: "2024",
+    description: "Learned to build and simulate dynamic systems using Simulink block diagrams.",
   },
   {
-    title: "Git & GitHub Essentials",
-    issuer: "LinkedIn Learning",
-    date: "2023",
-    description: "Mastered version control and collaborative development workflows.",
+    title: "MATLAB Programming Techniques",
+    issuer: "MathWorks",
+    date: "2024",
+    description: "Advanced certification covering functions, debugging, and performance optimization in MATLAB.",
   },
 ];
 

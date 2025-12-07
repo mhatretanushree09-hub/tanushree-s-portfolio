@@ -1,4 +1,5 @@
 import { Code, Lightbulb, GraduationCap, Heart } from "lucide-react";
+import profileImage from "@/assets/profile.jpeg";
 
 const AboutSection = () => {
   const highlights = [
@@ -25,12 +26,11 @@ const AboutSection = () => {
               {/* Profile ring */}
               <div className="profile-ring relative">
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-card">
-                  {/* Placeholder - replace with actual image */}
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                    <span className="text-6xl md:text-7xl font-display font-bold text-gradient">
-                      TM
-                    </span>
-                  </div>
+                  <img 
+                    src={profileImage} 
+                    alt="Tanushree Mhatre" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
