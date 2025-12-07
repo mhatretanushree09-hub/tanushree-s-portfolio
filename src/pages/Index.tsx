@@ -8,9 +8,11 @@ import PhotoGallery from "@/components/PhotoGallery";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import IntroAnimation from "@/components/IntroAnimation";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(true);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     // Check for saved theme preference or default to dark
@@ -24,7 +26,18 @@ const Index = () => {
       setIsDark(true);
       document.documentElement.classList.add("dark");
     }
+
+    // Check if intro was already shown this session
+    const introShown = sessionStorage.getItem("introShown");
+    if (introShown) {
+      setShowIntro(false);
+    }
   }, []);
+
+  const handleIntroComplete = () => {
+    setShowIntro(false);
+    sessionStorage.setItem("introShown", "true");
+  };
 
   const toggleTheme = () => {
     setIsDark(!isDark);
@@ -39,6 +52,8 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen">
+      {showIntro && <IntroAnimation onComplete={handleIntroComplete} />}
+      
       <LightRays 
         raysOrigin="top-center"
         raysColor="#ffffff"
