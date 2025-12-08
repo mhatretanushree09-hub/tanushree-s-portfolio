@@ -36,7 +36,7 @@ const ContactSection = () => {
   ];
 
   const contactInfo = [
-    { icon: Mail, label: "tanushree@example.com" },
+    { icon: Mail, label: "mhatretanushree09@gmail.com" },
     { icon: Phone, label: "+91 XXXXX XXXXX" },
     { icon: MapPin, label: "Mumbai, India" },
   ];
