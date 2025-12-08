@@ -30,14 +30,14 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-    { icon: Github, label: "GitHub", href: "https://github.com" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/tanushree_mhatree?igsh=NndkeHJ4cm9rNDE=" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/tanushree-mhatre-15b4b4385/" },
+    { icon: Github, label: "GitHub", href: "https://github.com/mhatretanushree09-hub" },
   ];
 
   const contactInfo = [
     { icon: Mail, label: "mhatretanushree09@gmail.com" },
-    { icon: Phone, label: "+91 XXXXX XXXXX" },
+    { icon: Phone, label: "+91 93248 21277" },
     { icon: MapPin, label: "Mumbai, India" },
   ];
 
