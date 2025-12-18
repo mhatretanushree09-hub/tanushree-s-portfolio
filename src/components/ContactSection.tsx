@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Instagram, Linkedin, Github, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Instagram,
+  Linkedin,
+  Github,
+  Send,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,39 +16,61 @@ import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    from_email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const socialLinks = [
+    {
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/tanushree_mhatree?igsh=NndkeHJ4cm9rNDE=",
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/tanushree-mhatre-15b4b4385/",
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/mhatretanushree09-hub",
+    },
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
-      });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        formData,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message sent!",
+            description: "Thank you for reaching out. I'll get back to you soon!",
+          });
+          setFormData({ from_name: "", from_email: "", message: "" });
+          setIsSubmitting(false);
+        },
+        () => {
+          toast({
+            title: "Error",
+            description: "Failed to send message. Please try again.",
+          });
+          setIsSubmitting(false);
+        }
+      );
   };
-
-  const socialLinks = [
-    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/tanushree_mhatree?igsh=NndkeHJ4cm9rNDE=" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/tanushree-mhatre-15b4b4385/" },
-    { icon: Github, label: "GitHub", href: "https://github.com/mhatretanushree09-hub" },
-  ];
-
-  const contactInfo = [
-    { icon: Mail, label: "mhatretanushree09@gmail.com" },
-    { icon: Phone, label: "+91 93248 21277" },
-    { icon: MapPin, label: "Mumbai, India" },
-  ];
 
   return (
     <section id="contact" className="py-20 md:py-32 relative">
@@ -55,42 +86,38 @@ const ContactSection = () => {
               <p className="text-muted-foreground">
                 Have a question or want to work together? Drop me a message!
               </p>
-              
+
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Input
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="bg-card border-border/50 focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="bg-card border-border/50 focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    required
-                    rows={5}
-                    className="bg-card border-border/50 focus:border-primary resize-none"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-primary"
-                >
+                <Input
+                  placeholder="Your Name"
+                  value={formData.from_name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, from_name: e.target.value })
+                  }
+                  required
+                />
+
+                <Input
+                  type="email"
+                  placeholder="Your Email"
+                  value={formData.from_email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, from_email: e.target.value })
+                  }
+                  required
+                />
+
+                <Textarea
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  required
+                  rows={5}
+                />
+
+                <Button type="submit" disabled={isSubmitting} className="w-full">
                   {isSubmitting ? (
                     "Sending..."
                   ) : (
@@ -108,15 +135,22 @@ const ContactSection = () => {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
                 <div className="space-y-3">
-                  {contactInfo.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg bg-card card-shadow"
-                    >
-                      <item.icon className="w-5 h-5 text-primary" />
-                      <span className="text-muted-foreground">{item.label}</span>
-                    </div>
-                  ))}
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-card">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <span className="text-muted-foreground">
+                      mhatretanushree09@gmail.com
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-card">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span className="text-muted-foreground">
+                      +91 93248 21277
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-card">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span className="text-muted-foreground">Mumbai, India</span>
+                  </div>
                 </div>
               </div>
 
@@ -128,7 +162,7 @@ const ContactSection = () => {
                       key={index}
                       variant="outline"
                       size="lg"
-                      className="rounded-full border-primary/30 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                      className="rounded-full"
                       onClick={() => window.open(social.href, "_blank")}
                     >
                       <social.icon className="w-5 h-5 mr-2" />

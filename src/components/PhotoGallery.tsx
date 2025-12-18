@@ -1,15 +1,28 @@
 import CircularGallery from "./CircularGallery";
+import photo1 from "../assets/galley/photo1.jpeg";
+import photo2 from "../assets/galley/photo2.jpeg";
+import photo3 from "../assets/galley/photo3.jpeg";
+import photo4 from "../assets/galley/photo4.jpeg";
+import photo5 from "../assets/galley/photo5.jpeg";
+import photo6 from "../assets/galley/photo6.jpeg";
+import photo7 from "../assets/galley/photo7.jpeg";
+import photo8 from "../assets/galley/photo8.jpeg";
+import photo9 from "../assets/galley/photo9.jpeg";
+
+
 
 // Gallery items with placeholder images - replace with actual photos
 const galleryItems = [
-  { image: "https://picsum.photos/seed/photo1/800/600", text: "Memory 1" },
-  { image: "https://picsum.photos/seed/photo2/800/600", text: "Memory 2" },
-  { image: "https://picsum.photos/seed/photo3/800/600", text: "Memory 3" },
-  { image: "https://picsum.photos/seed/photo4/800/600", text: "Memory 4" },
-  { image: "https://picsum.photos/seed/photo5/800/600", text: "Memory 5" },
-  { image: "https://picsum.photos/seed/photo6/800/600", text: "Memory 6" },
-  { image: "https://picsum.photos/seed/photo7/800/600", text: "Memory 7" },
-  { image: "https://picsum.photos/seed/photo8/800/600", text: "Memory 8" },
+  { image: photo1, text: "Sky" },
+  { image: photo2, text: "Malabar Walkway" },
+  { image: photo3, text: "Churchgate" },
+  { image: photo4, text: "Moon" },
+  { image: photo5, text: "Lavender cafe" },
+  { image: photo6, text: "Bliss" },
+  { image: photo7, text: "Food" },
+  { image: photo8, text: "Library" },
+  { image: photo9, text: "National Park" },
+
 ];
 
 const PhotoGallery = () => {
@@ -32,8 +45,8 @@ const PhotoGallery = () => {
           bend={3}
           textColor="#ffffff"
           borderRadius={0.05}
-          scrollSpeed={2}
-          scrollEase={0.05}
+          scrollSpeed={1}
+          scrollEase={0.08}
         />
       </div>
 
