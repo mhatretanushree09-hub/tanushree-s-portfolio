@@ -48,10 +48,10 @@ const ContactSection = () => {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_62u6ofs",
+        "template_h2md5qf",
         formData,
-        "YOUR_PUBLIC_KEY"
+        "nKBMzQV8Nn-mUlpRC"
       )
       .then(
         () => {

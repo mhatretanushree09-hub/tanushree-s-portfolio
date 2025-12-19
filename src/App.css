@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+/* 🔒 Hide Lovable branding (frontend only) */
+iframe[src*="lovable"],
+div[class*="lovable"],
+a[href*="lovable"] {
+  display: none !important;
+}

@@ -227,3 +227,17 @@
 .animation-delay-600 {
   animation-delay: 600ms;
 }
+
+/* 🚫 Hide Lovable floating heart / branding */
+iframe[src*="lovable"],
+a[href*="lovable"],
+div[id*="lovable"],
+div[class*="lovable"] {
+  display: none !important;
+}
+
+/* Extra safety for floating injected widgets */
+body > iframe,
+body > div[style*="position: fixed"] {
+  display: none !important;
+}
