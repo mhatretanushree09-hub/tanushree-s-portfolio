@@ -99,7 +99,8 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
               variant="outline"
               size="sm"
               className="hidden sm:flex items-center gap-2 border-primary/50 hover:bg-primary hover:text-primary-foreground"
-              onClick={() => window.open("#", "_blank")}
+             onClick={() => window.open("/tanushree_resume.pdf", "_blank")}
+
             >
               <FileText className="w-4 h-4" />
               Resume
@@ -156,13 +157,15 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
                   {item.label}
                 </a>
               ))}
-              <a
-                href="#"
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-muted rounded-lg flex items-center gap-2"
-              >
-                <FileText className="w-4 h-4" />
-                Resume
-              </a>
+            <a
+            href="/tanushree_resume.pdf"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-muted rounded-lg flex items-center gap-2">
+           <FileText className="w-4 h-4" />
+           Resume
+            </a>
+
             </div>
           </div>
         )}

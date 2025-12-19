@@ -20,21 +20,7 @@ const Footer = () => {
             <span className="text-muted-foreground text-sm">Tanushree Mhatre</span>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
+          
 
           {/* Copyright */}
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
