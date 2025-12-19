@@ -38,8 +38,8 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <span>© {currentYear} Tanushree Mhatre. Made with</span>
-            <Heart className="w-4 h-4 text-red-500 fill-red-500" />
+            <span>© {currentYear} Tanushree Mhatre.</span>
+          
             <span>All rights reserved.</span>
           </div>
         </div>
